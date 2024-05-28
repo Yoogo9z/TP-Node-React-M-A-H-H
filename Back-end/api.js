@@ -30,7 +30,7 @@ sequelize
   // Synchronisation des modèles avec la base de données
   .sync({ force: true })
   .then(async () => {
-    console.log('✅ Database & tables created!');
+    console.log('✅ Database & tables created! Access the API at http://localhost:3000');
     // Vérifier s'il y a 0 enregistrement dans la table bar
     // const barCount = await Bar.count();
     // if (barCount === 0) {
