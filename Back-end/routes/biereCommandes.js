@@ -1,11 +1,11 @@
 import express from 'express';
-import Biere_commande from '../models/biere_commande.js';
+import BiereCommande from '../models/biereCommande.js';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-        const biere_commande = await Biere_commande.findAll();
-        res.json(biere_commande);
+        const biereCommande = await BiereCommande.findAll();
+        res.json(biereCommande);
     } catch (err) {
         res.status(500).json({ error: err.message })
     }
@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const newBiere_commande = await Biere_commande.create(req.body);
-        res.status(201).json(newBiere_commande);
+        const newBiereCommande = await BiereCommande.create(req.body);
+        res.status(201).json(newBiereCommande);
     } catch (err) {
         res.status(500).json({ error: err.message })
     }
@@ -23,10 +23,10 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const biere_commande = await Biere_commande.findByPk(id)
-        if (biere_commande) {
-            await biere_commande.update(req.body)
-            res.json(biere_commande)
+        const biereCommande = await BiereCommande.findByPk(id)
+        if (biereCommande) {
+            await biereCommande.update(req.body)
+            res.json(biereCommande)
         } else {
             res.status(404).json({ error: 'Not found' })
         }
@@ -38,9 +38,9 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const biere_commande = await Biere_commande.findByPk(id)
-        if (biere_commande) {
-            await biere_commande.destroy()
+        const biereCommande = await BiereCommande.findByPk(id)
+        if (biereCommande) {
+            await biereCommande.destroy()
             res.status(204).end()
         } else {
             res.status(404).json({ error: 'Not found' })

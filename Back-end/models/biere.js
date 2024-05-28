@@ -1,7 +1,8 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
-const Biere = sequelize.define('biere', {
+const Biere = sequelize.define('Biere', {
+
     name: {
         type: DataTypes.STRING,
 
