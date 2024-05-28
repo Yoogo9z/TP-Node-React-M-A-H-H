@@ -6,7 +6,8 @@ const Commande = sequelize.define('Commande', {
         type: DataTypes.STRING,
     },
     prix: {
-        type: DataTypes.FLOAT.MIN(0)
+        type: DataTypes.FLOAT,
+        MIN:0,
     },
     bars_id: {
         type: DataTypes.INTEGER,

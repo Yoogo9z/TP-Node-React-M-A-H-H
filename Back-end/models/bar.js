@@ -5,7 +5,6 @@ const Bar = sequelize.define('Bar', {
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
     },
     name: {
         type: DataTypes.STRING,
