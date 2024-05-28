@@ -2,11 +2,6 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
 const Bar = sequelize.define('Bar', {
-    id:{
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-    },
     name: {
         type: DataTypes.STRING,
         unique: true,
