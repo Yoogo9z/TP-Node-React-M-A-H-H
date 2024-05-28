@@ -42,10 +42,11 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-// Définir le port d'écoute
-const PORT = process.env.PORT || 3000;
+
 
 // Démarrer le serveur
-app.listen(PORT, () => {
-  console.log(`✅ API Server is running on port ${PORT}`);
+const port = 3000;
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
 });
