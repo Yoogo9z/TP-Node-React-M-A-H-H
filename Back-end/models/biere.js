@@ -26,6 +26,6 @@ const Biere = sequelize.define('biere', {
 
     },
 
-}, { timestamps: false })
+}, {timestamps: false})
 
 export default Biere;
