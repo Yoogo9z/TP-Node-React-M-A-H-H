@@ -1,11 +1,11 @@
 {
   "name": "back-end",
   "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run dev:api.js"
+    "dev": "nodemon api.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "mysql2": "^3.9.8",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7"
   },
