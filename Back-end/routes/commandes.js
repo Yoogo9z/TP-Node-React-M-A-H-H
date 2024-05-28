@@ -31,7 +31,7 @@ router.post('/', async(req,res)=>{
 });
 
 router.put('/:id', async(req,res)=>{
-    try {
+    try { 
         const id = req.params.id;
         const updateCommande = await Commande.findByPk(id);
         if (updateCommande){
