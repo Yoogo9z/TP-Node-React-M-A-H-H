@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', async(req,res)=>{
     try {
         const commandes = await Commande.findAll();
-        res.json(commande);
+        res.json(commandes);
     } catch (err) {
         res.status(500).json({"error": "err.message"});
     } 

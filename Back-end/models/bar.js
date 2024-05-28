@@ -2,6 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
 const Bar = sequelize.define('Bar', {
+
     name: {
         type: DataTypes.STRING,
         unique: true,
@@ -21,7 +22,6 @@ const Bar = sequelize.define('Bar', {
         allowNull: true,
     }
 },{
-        timestamps: false,
-    });
+        timestamps: false,    });
 
 export default Bar;
