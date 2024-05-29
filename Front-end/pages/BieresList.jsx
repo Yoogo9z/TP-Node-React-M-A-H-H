@@ -64,9 +64,9 @@ const BieresList = () => {
                                 <td>{biere.degree}</td>
                                 <td>{biere.prix}</td>
                                 <td>{barNames[biere.id]}</td>
-                                <td>
-                                    <button className="btn btn-info btn-sm me-2" onClick={() => setSelectedBiere(biere)}>Edit</button>
-                                    <button className="btn btn-danger btn-sm" onClick={() => handleDelete(biere.id)}>Delete</button>
+                                <td style={{"display":"flex","flexDirection":"column"}}> 
+                                    <button className="btn btn-success btn-sm " style={{"marginBottom":5}}onClick={() => setSelectedBiere(biere)}>Commander</button>
+                                    <button className="btn btn-danger btn-sm"style={{"marginBottom":5}} onClick={() => handleDelete(biere.id)}>Supprimer</button>
                                 </td>
                             </tr>
                         ))}
