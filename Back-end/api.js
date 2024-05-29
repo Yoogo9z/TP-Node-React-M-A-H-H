@@ -31,12 +31,7 @@ sequelize
   .sync({ force: true })
   .then(async () => {
     console.log('✅ Database & tables created!');
-    // Vérifier s'il y a 0 enregistrement dans la table bar
-    // const barCount = await Bar.count();
-    // if (barCount === 0) {
-    //   console.log('No bar found, seeding database...');
-    //   await seedDatabase();
-    // }
+ 
   })
   .catch((err) => {
     console.error('Unable to connect to the database:', err);

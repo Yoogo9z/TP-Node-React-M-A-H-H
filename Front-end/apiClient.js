@@ -1,9 +1,11 @@
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'http://localhost:3000';
+
 
 export async function fetchBars() {
   const response = await fetch(`${API_BASE_URL}/bars`);
   return response.json();
 }
+//____erreur________^____^____^____________
 export async function fetchBar(id) {
   const response = await fetch(`${API_BASE_URL}/bars/${id}`);
   return response.json();
