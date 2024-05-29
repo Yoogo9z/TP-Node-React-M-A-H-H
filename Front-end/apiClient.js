@@ -1,11 +1,10 @@
 const API_BASE_URL = 'http://localhost:3000';
 
-
 export async function fetchBars() {
   const response = await fetch(`${API_BASE_URL}/bars`);
   return response.json();
 }
-//____erreur________^____^____^____________
+
 export async function fetchBar(id) {
   const response = await fetch(`${API_BASE_URL}/bars/${id}`);
   return response.json();
@@ -32,7 +31,7 @@ export async function updateBar(id, bar) {
 export async function deleteBar(id) {
   await fetch(`${API_BASE_URL}/bars/${id}`, { method: 'DELETE' });
 }
-//********************* */
+
 export async function fetchBieres() {
   const response = await fetch(`${API_BASE_URL}/bieres`);
   return response.json();
@@ -60,8 +59,6 @@ export async function deleteBiere(id) {
   await fetch(`${API_BASE_URL}/bieres/${id}`, { method: 'DELETE' });
 }
 
-
-//****************** */
 export async function fetchCommandes() {
   const response = await fetch(`${API_BASE_URL}/commandes`);
   return response.json();
@@ -85,7 +82,6 @@ export async function updateCommande(id, commande) {
   return response.json();
 }
 
-export async function deleteCommandes(id) {
+export async function deleteCommande(id) {
   await fetch(`${API_BASE_URL}/commandes/${id}`, { method: 'DELETE' });
 }
-//***************************** */
