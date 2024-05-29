@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import BarsList from './pages/bars';
+import BarsList from './pages/BarsList';
 import BieresList from './pages/BieresList';
 import BarDetails from './pages/BarDetails';
 
