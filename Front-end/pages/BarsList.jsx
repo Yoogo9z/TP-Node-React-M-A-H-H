@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-// Image générique de bar
-const genericBarImage = 'https://example.com/generic-bar-image.jpg';
+const genericBarImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/HK_Central_%E6%93%BA%E8%8A%B1%E8%A1%97_Lyndhurst_Terrace_sidewalk_restuarant_bar_table_n_chairs_n_tender_Oct-2011.jpg/640px-HK_Central_%E6%93%BA%E8%8A%B1%E8%A1%97_Lyndhurst_Terrace_sidewalk_restuarant_bar_table_n_chairs_n_tender_Oct-2011.jpg';
 
 const BarsList = () => {
   const [bars, setBars] = useState([]);
@@ -34,7 +33,8 @@ const BarsList = () => {
                 <h5 className="card-title">{bar.name}</h5>
                 <div className='buttons' style={{ right: 8, bottom: 8 }}>
                   <Link className='btn btn-success btn-sm me-1' to={'/bars/' + bar.id}><FontAwesomeIcon icon={faStar} /> Voir détails </Link>
-                  <button className="btn btn-danger btn-sm" onClick={() => handleDelete(bar.id)}>Supprimer</button>
+                  <button className="btn btn-danger btn-sm" onClick={() => handleDelete(bar.id)}>
+                    <FontAwesomeIcon icon={faTrash} /> Supprimer </button>
                 </div>
               </div>
             </div>

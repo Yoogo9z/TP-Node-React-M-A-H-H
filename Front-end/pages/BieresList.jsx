@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 import { fetchBieres, deleteBiere } from '../apiClient';
+import { width } from '@fortawesome/free-solid-svg-icons/fa0';
+
+const genericBiereImage = 'https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+
 
 const BieresList = () => {
     const [bieres, setBieres] = useState([]);
@@ -24,6 +28,7 @@ const BieresList = () => {
                 <table className="table table-striped table-hover">
                     <thead className="thead-dark">
                         <tr>
+                            <th></th>
                             <th>Nom</th>
                             <th>Description</th>
                             <th>Degré</th>
@@ -34,6 +39,7 @@ const BieresList = () => {
                     <tbody>
                         {bieres.map(biere => (
                             <tr key={biere.id}>
+                                <td style={{ width: '100px' }}> <img src={genericBiereImage} className="card-img-top" alt="Bière" /></td>
                                 <td>{biere.name}</td>
                                 <td>{biere.description}</td>
                                 <td>{biere.degree}</td>
