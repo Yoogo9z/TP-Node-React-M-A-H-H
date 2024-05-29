@@ -22,6 +22,7 @@ const Bar = sequelize.define('Bar', {
         allowNull: true,
     }
 },{
-        timestamps: false,    });
+        timestamps: false,
+    });
 
 export default Bar;

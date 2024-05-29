@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import sequelize from './config/database.js';
-import seedDatabase from './config/seed.js';
+
 // import Bar from './models/bar.js';
 // import './config/customConsole.js';
 
@@ -28,24 +28,20 @@ app.use('/biereCommandes',biereCommandesRoutes);
 
 sequelize
   // Synchronisation des modèles avec la base de données
-  .sync({ force: true })
+  .sync()
   .then(async () => {
-    console.log('✅ Database & tables created! Access the API at http://localhost:3000');
-    // Vérifier s'il y a 0 enregistrement dans la table bar
-    // const barCount = await Bar.count();
-    // if (barCount === 0) {
-    //   console.log('No bar found, seeding database...');
-    //   await seedDatabase();
-    // }
+    console.log('✅ Database & tables created!');
+ 
   })
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
 
-// Définir le port d'écoute
-const PORT = process.env.PORT || 3000;
+
 
 // Démarrer le serveur
-app.listen(PORT, () => {
-  console.log(`✅ API Server is running on port ${PORT}`);
+const port = 3000;
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
 });

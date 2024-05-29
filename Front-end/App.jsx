@@ -1,13 +1,20 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import NavBar from './src/components/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import BarsList from './pages/bars';
 
 const App = () => {
   return (
     <Router>
       <NavBar />
-
+      <div>
+        <section className="section">
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<BarsList />} />
+            </Routes>
+          </div>
+        </section>
+      </div>
     </Router>
   );
 };

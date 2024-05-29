@@ -11,6 +11,6 @@ const BiereCommande = sequelize.define('BiereCommande', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-},{ timestamps: false })
+})
 
 export default BiereCommande;

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 
-
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,7 +22,7 @@ function NavBar() {
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/Accueil">Accueil</Link>
+                            <Link className="nav-link" to="/">Accueil</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/Bieres">Bieres</Link>
@@ -32,7 +31,7 @@ function NavBar() {
                             <Link className="nav-link" to="/Commandes">Commandes</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/BiereCommandes">Commandes de bières</Link>
+                            <Link className="nav-link" to="/BiereCommandes">Commandes de bieres</Link>
                         </li>
 
                     </ul>
