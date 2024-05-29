@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import BarsList from './pages/BarsList';
 import BieresList from './pages/BieresList';
 import BarDetails from './pages/BarDetails';
+import BarForm from './components/formBar';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
               <Route path="/" element={<BarsList />} />
               <Route path="/bieres" element={<BieresList />} />
               <Route path="/bars/:id" element={<BarDetails />} />
+              <Route path="/ajouterunbar" element={<BarForm />} />
             </Routes>
           </div>
         </section>
