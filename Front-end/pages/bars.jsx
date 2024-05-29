@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { fetchBars } from '../apiClient.js';
+import { fetchBars, deleteBar } from '../apiClient.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
+// Image générique de bar
+const genericBarImage = 'https://example.com/generic-bar-image.jpg';
 
 const BarsList = () => {
   const [bars, setBars] = useState([]);
@@ -16,14 +18,9 @@ const BarsList = () => {
     loadBars();
   }, []);
 
-  const handleDelete = async (id, event) => {
-    event.preventDefault();
-    try {
-      await axios.delete(`/api/bars/${id}`);
-      setBars(bars.filter(bar => bar.id !== id));
-    } catch (error) {
-      console.error('There was an error deleting the bar!', error);
-    }
+  const handleDelete = async (id) => {
+    await deleteBar(id);
+    setBars(bars.filter(bar => bar.id !== id));
   };
 
   return (
@@ -31,16 +28,13 @@ const BarsList = () => {
       <div className="row">
         {bars.map(bar => (
           <div className="col-md-3 mb-4" key={bar.id}>
-            <div className="card">
+            <div className="card" >
+              <img src={genericBarImage} className="card-img-top" alt="Bar" />
               <div className="card-body">
-                <h1 className="card-title">{bar.name}</h1>
-                <h2 className="card-title">{bar.adresse}</h2>
-                <h3 className="card-title">{bar.tel}</h3>
-                <h4 className="card-title">{bar.email}</h4>
-                <h5 className="card-title">{bar.description}</h5>
-                <div className='position-absolute' style={{ right: 8, bottom: 8 }}>
-                  <Link className='btn btn-success btn-sm me-1' to={'/bar/' + bar.id}><FontAwesomeIcon icon={faStar} /> Voir détails </Link>
-                  <button className='btn btn-danger btn-sm' onClick={(event) => handleDelete(bar.id, event)}><FontAwesomeIcon icon={faTrash} /> Supprimer</button>
+                <h5 className="card-title">{bar.name}</h5>
+                <div className='buttons' style={{ right: 8, bottom: 8 }}>
+                  <Link className='btn btn-success btn-sm me-1' to={'/bars/' + bar.id}><FontAwesomeIcon icon={faStar} /> Voir détails </Link>
+                  <button className="btn btn-danger btn-sm" onClick={() => handleDelete(bar.id)}>Supprimer</button>
                 </div>
               </div>
             </div>

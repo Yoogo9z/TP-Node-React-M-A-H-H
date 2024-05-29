@@ -1,5 +1,6 @@
 import express from 'express';
-import  Bar  from '../models/bar.js';
+import Bar from '../models/bar.js';
+
 const router = express.Router();
 
 router.post('/', async (req, res) => {
@@ -49,7 +50,6 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
-
 
 router.get('/:id', async (req, res) => {
     try {

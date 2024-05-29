@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import BarsList from './pages/bars';
+import BieresList from './pages/BieresList';
+import BarDetails from './pages/BarDetails';
 
 const App = () => {
   return (
@@ -11,6 +13,8 @@ const App = () => {
           <div className="container">
             <Routes>
               <Route path="/" element={<BarsList />} />
+              <Route path="/bieres" element={<BieresList />} />
+              <Route path="/bars/:id" element={<BarDetails />} />
             </Routes>
           </div>
         </section>
