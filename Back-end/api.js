@@ -28,7 +28,7 @@ app.use('/biereCommandes',biereCommandesRoutes);
 
 sequelize
   // Synchronisation des modèles avec la base de données
-  .sync({ force: true })
+  .sync()
   .then(async () => {
     console.log('✅ Database & tables created!');
  
