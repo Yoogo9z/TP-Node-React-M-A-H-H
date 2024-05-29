@@ -25,13 +25,21 @@ function NavBar() {
                             <Link className="nav-link" to="/">Accueil</Link>
                         </li>
                         <li className="nav-item">
+<<<<<<< HEAD
                         <Link className="nav-link" to="/bieres">Bières</Link>
+=======
+                            <Link className="nav-link" to="/Bieres">Bieres</Link>
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/Commandes">Commandes</Link>
                         </li>
                         <li className="nav-item">
+<<<<<<< HEAD
                             <Link className="nav-link" to="/ajouterunbar">Ajouter un bar</Link>
+=======
+                            <Link className="nav-link" to="/BiereCommandes">Commandes de bieres</Link>
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b
                         </li>
 
                     </ul>

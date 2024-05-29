@@ -1,5 +1,9 @@
 const API_BASE_URL = 'http://localhost:3000';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b
 export async function fetchBars() {
   const response = await fetch(`${API_BASE_URL}/bars`);
   return response.json();
@@ -31,7 +35,11 @@ export async function updateBar(id, bar) {
 export async function deleteBar(id) {
   await fetch(`${API_BASE_URL}/bars/${id}`, { method: 'DELETE' });
 }
+<<<<<<< HEAD
 
+=======
+//********************* */
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b
 export async function fetchBieres() {
   const response = await fetch(`${API_BASE_URL}/bieres`);
   return response.json();
@@ -59,6 +67,11 @@ export async function deleteBiere(id) {
   await fetch(`${API_BASE_URL}/bieres/${id}`, { method: 'DELETE' });
 }
 
+<<<<<<< HEAD
+=======
+
+//****************** */
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b
 export async function fetchCommandes() {
   const response = await fetch(`${API_BASE_URL}/commandes`);
   return response.json();
@@ -82,6 +95,13 @@ export async function updateCommande(id, commande) {
   return response.json();
 }
 
+<<<<<<< HEAD
 export async function deleteCommande(id) {
   await fetch(`${API_BASE_URL}/commandes/${id}`, { method: 'DELETE' });
 }
+=======
+export async function deleteCommandes(id) {
+  await fetch(`${API_BASE_URL}/commandes/${id}`, { method: 'DELETE' });
+}
+//***************************** */
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b

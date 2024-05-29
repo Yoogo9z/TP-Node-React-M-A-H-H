@@ -1,6 +1,10 @@
 import express from 'express';
+<<<<<<< HEAD
 import Bar from '../models/bar.js';
 
+=======
+import  Bar  from '../models/bar.js';
+>>>>>>> 8809e994fb0adeb14ed9a68a5ee6aa42fe5b821b
 const router = express.Router();
 
 router.post('/', async (req, res) => {

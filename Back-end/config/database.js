@@ -6,5 +6,5 @@ const sequelize = new Sequelize('chez_raoul', 'root', '', {
     logging: false, // ou true si besoin
     // port : 8889, pour les Mac
 });
-
+sequelize.sync();
 export default sequelize;
