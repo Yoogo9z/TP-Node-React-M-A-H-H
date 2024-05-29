@@ -9,8 +9,8 @@ const BiereCommande = sequelize.define('BiereCommande', {
     },
     commande_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
     },
-}, { timestamps: false })
+})
 
 export default BiereCommande;

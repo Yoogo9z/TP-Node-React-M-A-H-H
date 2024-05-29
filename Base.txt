@@ -1,0 +1,22 @@
+
+INSERT INTO bieres (biere_id, name, description, degree, prix, bars_id) VALUES
+(1, 'Bière de Paris', 'Une bière légère et rafraîchissante, idéale pour les chaudes journées d\'été.', 4.5, 5.0, 1),
+(2, 'Brune de Lyon', 'Une bière brune au goût riche et profond, parfaite pour les amateurs de bières fortes.', 6.2, 6.5, 2),
+(3, 'Blonde de Bretagne', 'Une bière blonde avec une légère amertume et des arômes floraux.', 5.0, 4.8, 3),
+(4, 'IPA du Nord', 'Une India Pale Ale avec une forte amertume et des notes d\'agrumes.', 7.0, 7.0, 4),
+(5, 'Stout de Lille', 'Une bière noire avec des saveurs de café et de chocolat.', 8.0, 6.0, 5),
+(6, 'Bière numéro 6', 'Description de la bière numéro 6.', 4.5, 4.5, 1),
+(7, 'Bière numéro 7', 'Description de la bière numéro 7.', 5.0, 5.0, 2),
+(8, 'Bière numéro 8', 'Description de la bière numéro 8.', 5.5, 5.5, 3),
+(9, 'Bière numéro 9', 'Description de la bière numéro 9.', 6.0, 6.0, 4),
+(10, 'Bière numéro 10', 'Description de la bière numéro 10.', 6.5, 6.5, 5);
+
+INSERT INTO bars (name, adresse, tel, email, description) VALUES
+('Le Bar des Amis', '12 Rue de la Paix, 75001 Paris, France', '01 23 45 67 89', 'contact@lebardesamis.fr', 'Un endroit convivial pour se retrouver entre amis et profiter de cocktails uniques.'),
+('Chez Pierre', '34 Avenue de l\'Opéra, 75002 Paris, France', '01 98 76 54 32', 'info@chezpierre.fr', 'Bar à vin avec une large sélection de vins français et internationaux.'),
+('Le Coin Tranquille', '56 Boulevard Saint-Germain, 75005 Paris, France', '01 22 33 44 55', 'reservations@lecointranquille.fr', 'Un bar calme et relaxant, parfait pour des soirées détendues.'),
+('La Cave à Bières', '78 Rue de Rivoli, 75004 Paris, France', '01 66 77 88 99', 'contact@lacaveabieres.fr', 'Spécialisé dans les bières artisanales locales et internationales.'),
+('L\'Escale', '90 Quai de la Seine, 75019 Paris, France', NULL, 'info@lescale.fr', 'Bar au bord de la Seine avec une vue imprenable et une ambiance décontractée.');
+
+
+
