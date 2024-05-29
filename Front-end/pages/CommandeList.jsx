@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCommandes, deleteCommande, fetchBar } from '../apiClient';  // Assurez-vous que l'import du nom est correct
+import { fetchCommandes, deleteCommande, fetchBar } from '../apiClient';
 
 const CommandesList = () => {
     const [commandes, setCommandes] = useState([]);
