@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { fetchBieres, deleteBiere } from '../apiClient';
+import { fetchBieres, deleteBiere, fetchBar } from '../apiClient';
 import { width } from '@fortawesome/free-solid-svg-icons/fa0';
+import BarDetails from './BarDetails';
 
 const genericBiereImage = 'https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
 
 const BieresList = () => {
     const [bieres, setBieres] = useState([]);
+    const [barNames, setBarNames] = useState({});
 
     useEffect(() => {
         const loadBieres = async () => {
@@ -15,6 +17,23 @@ const BieresList = () => {
         };
         loadBieres();
     }, []);
+
+    useEffect(() => {
+        const loadBarNames = async () => {
+            const names = {};
+            await Promise.all(bieres.map(async (biere) => {
+                try {
+                    const barData = await fetchBar(biere.bars_id);
+                    names[biere.id] = barData.name;
+                } catch (error) {
+                    console.error('Erreur lors de la récupération du nom du bar:', error);
+                    names[biere.id] = 'Nom de bar non disponible';
+                }
+            }));
+            setBarNames(names);
+        };
+        loadBarNames();
+    }, [bieres]);
 
     const handleDelete = async (id) => {
         await deleteBiere(id);
@@ -44,7 +63,7 @@ const BieresList = () => {
                                 <td>{biere.description}</td>
                                 <td>{biere.degree}</td>
                                 <td>{biere.prix}</td>
-                                <td>{biere.bars_id}</td>
+                                <td>{barNames[biere.id]}</td>
                                 <td>
                                     <button className="btn btn-info btn-sm me-2" onClick={() => setSelectedBiere(biere)}>Edit</button>
                                     <button className="btn btn-danger btn-sm" onClick={() => handleDelete(biere.id)}>Delete</button>
