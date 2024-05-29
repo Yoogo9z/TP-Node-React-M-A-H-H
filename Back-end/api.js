@@ -1,8 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import sequelize from './config/database.js';
-
-// import Bar from './models/bar.js';
+import Bar from './models/bar.js';
 // import './config/customConsole.js';
 
 // Importation des routes
